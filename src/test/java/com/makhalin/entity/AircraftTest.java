@@ -10,7 +10,6 @@ class AircraftTest {
     @Test
     void checkAircraftSuccess() {
         var aircraft = Aircraft.builder()
-                               .id(1)
                                .model("Boeing-737")
                                .build();
 

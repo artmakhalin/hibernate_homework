@@ -12,7 +12,6 @@ class FlightTest {
     @Test
     void checkFlightSuccess() {
         var flight = Flight.builder()
-                           .id(1L)
                            .flightNo("SU102")
                            .departureAirportCode("SVO")
                            .arrivalAirportCode("JFK")

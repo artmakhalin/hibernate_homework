@@ -12,7 +12,6 @@ class CrewTest {
     @Test
     void checkCrewSuccess() {
         var crew = Crew.builder()
-                       .id(1)
                        .firstname("Test")
                        .lastname("Test")
                        .email("test@gmail.com")

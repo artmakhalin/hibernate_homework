@@ -17,7 +17,7 @@
         <lombok.version>1.18.24</lombok.version>
         <junit5.version>5.8.2</junit5.version>
         <assertj.version>3.24.2</assertj.version>
-        <h2.version>2.1.210</h2.version>
+        <h2.version>1.4.200</h2.version>
         <clean.plugin.version>3.2.0</clean.plugin.version>
         <compiler.plugin.version>3.10.1</compiler.plugin.version>
         <deploy.plugin.version>3.0.0</deploy.plugin.version>

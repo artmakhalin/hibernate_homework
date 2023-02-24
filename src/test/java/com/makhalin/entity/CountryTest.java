@@ -10,7 +10,6 @@ class CountryTest {
     @Test
     void checkCountrySuccess() {
         var country = Country.builder()
-                             .id(25)
                              .countryName("USA")
                              .build();
 
