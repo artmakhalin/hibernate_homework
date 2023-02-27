@@ -26,11 +26,12 @@ class FlightTest {
              var session = sessionFactory.openSession()) {
             session.beginTransaction();
             session.save(flight);
+            session.getTransaction()
+                   .commit();
+
             var actualResult = session.get(Flight.class, flight.getId());
 
             assertThat(actualResult).isEqualTo(flight);
-            session.getTransaction()
-                   .commit();
         }
     }
 }

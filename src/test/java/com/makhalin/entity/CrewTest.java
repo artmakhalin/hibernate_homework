@@ -26,11 +26,12 @@ class CrewTest {
              var session = sessionFactory.openSession()) {
             session.beginTransaction();
             session.save(crew);
+            session.getTransaction()
+                   .commit();
+
             var actualResult = session.get(Crew.class, crew.getId());
 
             assertThat(actualResult).isEqualTo(crew);
-            session.getTransaction()
-                   .commit();
         }
     }
 }

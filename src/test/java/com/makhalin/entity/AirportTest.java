@@ -19,11 +19,12 @@ class AirportTest {
              var session = sessionFactory.openSession()) {
             session.beginTransaction();
             session.save(airport);
+            session.getTransaction()
+                   .commit();
+
             var actualResult = session.get(Airport.class, airport.getCode());
 
             assertThat(actualResult).isEqualTo(airport);
-            session.getTransaction()
-                   .commit();
         }
     }
 }

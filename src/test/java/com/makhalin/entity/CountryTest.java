@@ -17,11 +17,12 @@ class CountryTest {
              var session = sessionFactory.openSession()) {
             session.beginTransaction();
             session.save(country);
+            session.getTransaction()
+                   .commit();
+
             var actualResult = session.get(Country.class, country.getId());
 
             assertThat(actualResult).isEqualTo(country);
-            session.getTransaction()
-                   .commit();
         }
     }
 }

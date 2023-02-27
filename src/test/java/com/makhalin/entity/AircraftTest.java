@@ -17,11 +17,12 @@ class AircraftTest {
              var session = sessionFactory.openSession()) {
             session.beginTransaction();
             session.save(aircraft);
+            session.getTransaction()
+                   .commit();
+
             var actualResult = session.get(Aircraft.class, aircraft.getId());
 
             assertThat(actualResult).isEqualTo(aircraft);
-            session.getTransaction()
-                   .commit();
         }
     }
 
