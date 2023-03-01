@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.url">jdbc:h2:mem:flight_manager</property>
+        <property name="connection.driver_class">org.h2.Driver</property>
+        <property name="connection.username"/>
+        <property name="connection.password"/>
+        <property name="hibernate.dialect">org.hibernate.dialect.H2Dialect</property>
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+        <!-- DB schema will be updated if needed -->
+         <property name="hibernate.hbm2ddl.auto">create-drop</property>
+
+        <mapping class="com.makhalin.entity.Aircraft"/>
+        <mapping class="com.makhalin.entity.Airport"/>
+        <mapping class="com.makhalin.entity.Country"/>
+        <mapping class="com.makhalin.entity.Crew"/>
+        <mapping class="com.makhalin.entity.Flight"/>
+    </session-factory>
+</hibernate-configuration>
