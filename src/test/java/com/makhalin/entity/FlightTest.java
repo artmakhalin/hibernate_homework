@@ -17,7 +17,7 @@ class FlightTest {
                            .arrivalAirportCode("JFK")
                            .departureDate(LocalDate.of(2022, 2, 26))
                            .aircraftId(5)
-                           .flightTime(30650L)
+                           .time(30650L)
                            .isTurnaround(false)
                            .isPassenger(false)
                            .build();

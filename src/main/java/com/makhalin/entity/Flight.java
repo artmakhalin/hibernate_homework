@@ -35,7 +35,7 @@ public class Flight {
     private LocalDate departureDate;
     private Integer aircraftId;
     @Column(nullable = false)
-    private Long flightTime;
+    private Long time;
     @Column(nullable = false)
     private Boolean isTurnaround;
     @Column(nullable = false)

@@ -10,7 +10,7 @@ class CountryTest {
     @Test
     void checkCountrySuccess() {
         var country = Country.builder()
-                             .countryName("USA")
+                             .name("USA")
                              .build();
 
         try (var sessionFactory = HibernateUtil.buildSessionFactory();

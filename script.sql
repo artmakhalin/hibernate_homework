@@ -12,8 +12,8 @@ CREATE TABLE crew
 );
 CREATE TABLE country
 (
-    id           SERIAL PRIMARY KEY,
-    country_name VARCHAR(32) UNIQUE NOT NULL
+    id   SERIAL PRIMARY KEY,
+    name VARCHAR(32) UNIQUE NOT NULL
 );
 CREATE TABLE airport
 (
@@ -35,7 +35,7 @@ CREATE TABLE flight
     arrival_airport_code   CHAR(3) REFERENCES airport (code) NOT NULL,
     departure_date         DATE                              NOT NULL,
     aircraft_id            INT REFERENCES aircraft (id)      NOT NULL,
-    flight_time            BIGINT                            NOT NULL,
+    time                   BIGINT                            NOT NULL,
     is_turnaround          BOOLEAN                           NOT NULL,
     is_passenger           BOOLEAN                           NOT NULL
 );
