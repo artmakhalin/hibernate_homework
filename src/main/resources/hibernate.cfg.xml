@@ -17,6 +17,8 @@
         <mapping class="com.makhalin.entity.Country"/>
         <mapping class="com.makhalin.entity.Crew"/>
         <mapping class="com.makhalin.entity.Flight"/>
+        <mapping class="com.makhalin.entity.CrewAircraft"/>
+        <mapping class="com.makhalin.entity.FlightCrew"/>
         <!-- DB schema will be updated if needed -->
         <!-- <property name="hibernate.hbm2ddl.auto">update</property> -->
     </session-factory>
