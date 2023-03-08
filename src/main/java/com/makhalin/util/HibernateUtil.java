@@ -9,10 +9,15 @@ import org.hibernate.cfg.Configuration;
 public class HibernateUtil {
 
     public static SessionFactory buildSessionFactory() {
-        var configuration = new Configuration();
-        configuration.setPhysicalNamingStrategy(new CamelCaseToUnderscoresNamingStrategy());
+        var configuration = buildConfiguration();
         configuration.configure();
 
         return configuration.buildSessionFactory();
+    }
+
+    public static Configuration buildConfiguration() {
+        var configuration = new Configuration();
+        configuration.setPhysicalNamingStrategy(new CamelCaseToUnderscoresNamingStrategy());
+        return configuration;
     }
 }

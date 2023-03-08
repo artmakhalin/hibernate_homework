@@ -39,13 +39,17 @@ CREATE TABLE flight
     is_turnaround          BOOLEAN                           NOT NULL,
     is_passenger           BOOLEAN                           NOT NULL
 );
-CREATE TABLE crew_to_aircraft
+CREATE TABLE crew_aircraft
 (
-    crew_id     INT REFERENCES crew (id)     NOT NULL,
-    aircraft_id INT REFERENCES aircraft (id) NOT NULL
+    id          BIGSERIAL PRIMARY KEY,
+    crew_id     INT REFERENCES crew (id) ON DELETE CASCADE     NOT NULL,
+    aircraft_id INT REFERENCES aircraft (id) ON DELETE CASCADE NOT NULL,
+    permit_date DATE                                           NOT NULL
 );
-CREATE TABLE crew_to_flight
+CREATE TABLE flight_crew
 (
-    crew_id   INT REFERENCES crew (id)      NOT NULL,
-    flight_id BIGINT REFERENCES flight (id) NOT NULL
+    id               BIGSERIAL PRIMARY KEY,
+    crew_id          INT REFERENCES crew (id) ON DELETE CASCADE NOT NULL,
+    flight_id        BIGINT REFERENCES flight (id)              NOT NULL,
+    class_of_service VARCHAR(32)                                NOT NULL
 )

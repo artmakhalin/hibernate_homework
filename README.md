@@ -19,7 +19,7 @@ country_id (INTEGER) - id страны
 
 Country
 id (INTEGER) - PK
-country_name (VARCHAR) - страна
+name (VARCHAR) - страна
 
 Crew
 id (INTEGER) - PK
@@ -39,7 +39,19 @@ departure_airport_code (CHAR) - id аэропорта вылета
 transit_airport_code (CHAR) - id транзитного аэропорта (может быть null)
 arrival_airport_code (CHAR) - id аэропорта назначения
 aircraft_id (INTEGER) - id типа ВС
-flight_time (BIGINT) - полетное время в секундах
+time (BIGINT) - полетное время в секундах
 is_turnaround (BOOLEAN) - является ли рейс разворотным (если нет, то это командировка, и полет разбивается на несколько частей)
 is_passenger (BOOLEAN) - в случае TRUE, БП выполнял рейс в качестве пассажира, полетное время не учитывается, 
 поле необходимо для статистики
+
+CrewAircraft
+id (BIGINT) - PK
+crew_id (INT) - id БП
+aircraft_id (INT) - id типа ВС
+permit_date (DATE) - дата получения БП допуска на определенный тип ВС
+
+FlightCrew
+id (BIGINT) - PK
+crew_id (INT) - id БП
+flight_id (BIGINT) - id рейса
+class_of_service (VARCHAR) - класс обслуживания, в котором БП работал в рейсе (BUSINESS, ECONOMY)
