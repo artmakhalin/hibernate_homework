@@ -21,7 +21,7 @@ class FlightCrewIT extends IntegrationTestBase {
         @Cleanup var session = sessionFactory.openSession();
         session.beginTransaction();
 
-        flight = getFlight();
+        flight = getJfkSea();
         session.save(flight);
 
         session.getTransaction()
@@ -33,7 +33,7 @@ class FlightCrewIT extends IntegrationTestBase {
         @Cleanup var session = sessionFactory.openSession();
         session.beginTransaction();
 
-        var flightCrew = getFlightCrew();
+        var flightCrew = getJfkSeaAlex();
         flightCrew.setFlight(flight);
 
         assertThatNoException().isThrownBy(() -> session.save(flightCrew));
@@ -47,7 +47,7 @@ class FlightCrewIT extends IntegrationTestBase {
         @Cleanup var session = sessionFactory.openSession();
         session.beginTransaction();
 
-        var flightCrew = getFlightCrew();
+        var flightCrew = getJfkSeaAlex();
         flightCrew.setFlight(flight);
         flightCrew.setClassOfService(null);
 
@@ -59,7 +59,7 @@ class FlightCrewIT extends IntegrationTestBase {
         @Cleanup var session = sessionFactory.openSession();
         session.beginTransaction();
 
-        var flightCrew = getFlightCrew();
+        var flightCrew = getJfkSeaAlex();
         flightCrew.setFlight(flight);
         session.save(flightCrew);
 
@@ -76,7 +76,7 @@ class FlightCrewIT extends IntegrationTestBase {
         @Cleanup var session = sessionFactory.openSession();
         session.beginTransaction();
 
-        var flightCrew = getFlightCrew();
+        var flightCrew = getJfkSeaAlex();
         flightCrew.setFlight(flight);
         session.save(flightCrew);
         session.flush();
@@ -96,7 +96,7 @@ class FlightCrewIT extends IntegrationTestBase {
         @Cleanup var session = sessionFactory.openSession();
         session.beginTransaction();
 
-        var flightCrew = getFlightCrew();
+        var flightCrew = getJfkSeaAlex();
         flightCrew.setFlight(flight);
         session.save(flightCrew);
         session.flush();
