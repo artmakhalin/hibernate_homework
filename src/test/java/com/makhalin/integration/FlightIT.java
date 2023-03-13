@@ -19,7 +19,7 @@ class FlightIT extends IntegrationTestBase {
         @Cleanup var session = sessionFactory.openSession();
         session.beginTransaction();
 
-        var flight = getFlight();
+        var flight = getJfkSea();
 
         assertThatNoException().isThrownBy(() -> session.save(flight));
 
@@ -32,7 +32,7 @@ class FlightIT extends IntegrationTestBase {
         @Cleanup var session = sessionFactory.openSession();
         session.beginTransaction();
 
-        var flight = getFlight();
+        var flight = getJfkSea();
         flight.setAircraft(null);
 
         assertThatExceptionOfType(PropertyValueException.class).isThrownBy(() -> session.save(flight));
@@ -43,7 +43,7 @@ class FlightIT extends IntegrationTestBase {
         @Cleanup var session = sessionFactory.openSession();
         session.beginTransaction();
 
-        var flight = getFlight();
+        var flight = getJfkSea();
         session.save(flight);
 
         session.getTransaction()
@@ -59,7 +59,7 @@ class FlightIT extends IntegrationTestBase {
         @Cleanup var session = sessionFactory.openSession();
         session.beginTransaction();
 
-        var flight = getFlight();
+        var flight = getJfkSea();
         session.save(flight);
         session.flush();
         flight.setFlightNo("X555");
@@ -86,7 +86,7 @@ class FlightIT extends IntegrationTestBase {
         @Cleanup var session = sessionFactory.openSession();
         session.beginTransaction();
 
-        var flight = getFlight();
+        var flight = getJfkSea();
         session.save(flight);
         session.flush();
         session.delete(flight);

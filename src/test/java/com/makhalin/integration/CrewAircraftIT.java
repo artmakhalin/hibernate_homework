@@ -18,7 +18,7 @@ class CrewAircraftIT extends IntegrationTestBase {
         @Cleanup var session = sessionFactory.openSession();
         session.beginTransaction();
 
-        var crewAircraft = getCrewAircraft();
+        var crewAircraft = getAlexBoeing737();
 
         assertThatNoException().isThrownBy(() -> session.save(crewAircraft));
 
@@ -31,7 +31,7 @@ class CrewAircraftIT extends IntegrationTestBase {
         @Cleanup var session = sessionFactory.openSession();
         session.beginTransaction();
 
-        var crewAircraft = getCrewAircraft();
+        var crewAircraft = getAlexBoeing737();
         crewAircraft.setPermitDate(null);
 
         assertThatExceptionOfType(PropertyValueException.class).isThrownBy(() -> session.save(crewAircraft));
@@ -42,7 +42,7 @@ class CrewAircraftIT extends IntegrationTestBase {
         @Cleanup var session = sessionFactory.openSession();
         session.beginTransaction();
 
-        var crewAircraft = getCrewAircraft();
+        var crewAircraft = getAlexBoeing737();
         session.save(crewAircraft);
 
         session.getTransaction()
@@ -58,7 +58,7 @@ class CrewAircraftIT extends IntegrationTestBase {
         @Cleanup var session = sessionFactory.openSession();
         session.beginTransaction();
 
-        var crewAircraft = getCrewAircraft();
+        var crewAircraft = getAlexBoeing737();
         session.save(crewAircraft);
         session.flush();
         crewAircraft.setPermitDate(LocalDate.of(2018, 5, 5));
@@ -77,7 +77,7 @@ class CrewAircraftIT extends IntegrationTestBase {
         @Cleanup var session = sessionFactory.openSession();
         session.beginTransaction();
 
-        var crewAircraft = getCrewAircraft();
+        var crewAircraft = getAlexBoeing737();
         session.save(crewAircraft);
         session.flush();
         session.delete(crewAircraft);
